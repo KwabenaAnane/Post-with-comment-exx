@@ -1,6 +1,8 @@
-import profilePicture from './assets/profile-picture.png';
+import React, { useState } from 'react';
 import './App.css';
-import './index.css';
+import Post from './components/Post.jsx';
+// import CommentSection from './components/CommentSection.jsx';
+import profilePicture from './assets/profile-picture.png';
 
 function App() {
   const post = {
@@ -24,13 +26,12 @@ function App() {
   };
 
   return (
-    <div id='container'>
-      <img
-        src={post.author.image}
-        alt={`${post.author.name}'s profile picture`}
-        height='50'
-      />
-    </div>
+    <>
+      {/* <div id='post'> */}
+      <Post post={post} comment={comment} />
+
+      {/* Because the comment is from the Post.jsx file, you have to put the comment={comment} in the <Post/> also */}
+    </>
   );
 }
 
